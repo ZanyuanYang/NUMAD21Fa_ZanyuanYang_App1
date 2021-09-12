@@ -3,6 +3,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('/Users/jayingyoung/DAFkeystore/DAFKeystore.keystore')
+            storePassword 'yang1996123'
+            keyAlias 'mykey2'
+            keyPassword 'yang1996123'
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
