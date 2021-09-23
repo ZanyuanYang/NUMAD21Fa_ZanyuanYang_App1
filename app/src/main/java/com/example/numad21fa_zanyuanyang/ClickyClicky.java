@@ -1,11 +1,10 @@
 package com.example.numad21fa_zanyuanyang;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,40 +26,75 @@ public class ClickyClicky extends AppCompatActivity {
 
         TextView answer = findViewById(R.id.answer);
 
-        btnA.setOnClickListener(new View.OnClickListener(){
+        btnA.setOnTouchListener(new View.OnTouchListener(){
+           @Override
+           public boolean onTouch(View v, MotionEvent event){
+               if(event.getAction() == MotionEvent.ACTION_DOWN){
+                   answer.setText("A");
+               }else if(event.getAction() == MotionEvent.ACTION_UP){
+                   answer.setText("-");
+               }
+               return true;
+           }
+        });
+
+
+        btnB.setOnTouchListener(new View.OnTouchListener(){
             @Override
-            public void onClick(View v){
-                answer.setText("A");
+            public boolean onTouch(View v, MotionEvent event){
+                if(event.getAction() == MotionEvent.ACTION_DOWN){
+                    answer.setText("B");
+                }else if(event.getAction() == MotionEvent.ACTION_UP){
+                    answer.setText("-");
+                }
+                return true;
             }
         });
-        btnB.setOnClickListener(new View.OnClickListener(){
+        btnC.setOnTouchListener(new View.OnTouchListener(){
             @Override
-            public void onClick(View v){
-                answer.setText("B");
+            public boolean onTouch(View v, MotionEvent event){
+                if(event.getAction() == MotionEvent.ACTION_DOWN){
+                    answer.setText("C");
+                }else if(event.getAction() == MotionEvent.ACTION_UP){
+                    answer.setText("-");
+                }
+                return true;
             }
         });
-        btnC.setOnClickListener(new View.OnClickListener(){
+
+        btnD.setOnTouchListener(new View.OnTouchListener(){
             @Override
-            public void onClick(View v){
-                answer.setText("C");
+            public boolean onTouch(View v, MotionEvent event){
+                if(event.getAction() == MotionEvent.ACTION_DOWN){
+                    answer.setText("D");
+                }else if(event.getAction() == MotionEvent.ACTION_UP){
+                    answer.setText("-");
+                }
+                return true;
             }
         });
-        btnD.setOnClickListener(new View.OnClickListener(){
+
+        btnE.setOnTouchListener(new View.OnTouchListener(){
             @Override
-            public void onClick(View v){
-                answer.setText("D");
+            public boolean onTouch(View v, MotionEvent event){
+                if(event.getAction() == MotionEvent.ACTION_DOWN){
+                    answer.setText("E");
+                }else if(event.getAction() == MotionEvent.ACTION_UP){
+                    answer.setText("-");
+                }
+                return true;
             }
         });
-        btnE.setOnClickListener(new View.OnClickListener(){
+
+        btnF.setOnTouchListener(new View.OnTouchListener(){
             @Override
-            public void onClick(View v){
-                answer.setText("E");
-            }
-        });
-        btnF.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                answer.setText("F");
+            public boolean onTouch(View v, MotionEvent event){
+                if(event.getAction() == MotionEvent.ACTION_DOWN){
+                    answer.setText("F");
+                }else if(event.getAction() == MotionEvent.ACTION_UP){
+                    answer.setText("-");
+                }
+                return true;
             }
         });
 
