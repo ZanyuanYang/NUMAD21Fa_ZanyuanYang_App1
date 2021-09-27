@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ClickyClicky" />
+        <activity android:name=".LinkCollectorActivity" />
     </application>
 
 </manifest>

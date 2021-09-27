@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button getAboutBtn;
     private Button clickyButton;
+    private Button linkCollectorBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 Intent intent = new Intent(MainActivity.this, ClickyClicky.class);
+                startActivity(intent);
+            }
+        });
+
+        linkCollectorBtn = findViewById(R.id.linkCollector);
+        linkCollectorBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, LinkCollectorActivity.class);
                 startActivity(intent);
             }
         });
