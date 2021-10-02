@@ -1,10 +1,12 @@
 package com.example.numad21fa_zanyuanyang;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.webkit.URLUtil;
 import android.widget.Button;
@@ -21,6 +23,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class LinkCollectorActivity extends AppCompatActivity implements LinkCollectorDialog.ExampleDialogListener, recyclerAdapter.OnLinkListener {
 
@@ -79,7 +83,7 @@ public class LinkCollectorActivity extends AppCompatActivity implements LinkColl
 
         linkCollectorLayout = findViewById(R.id.linkCollectorLayout);
 
-        if(URLUtil.isValidUrl(url)){
+        if(isValidUrl(url)){
             linkList.add(new LinkList(name, url));
 
             Snackbar.make(linkCollectorLayout, "Link Create Successfully!", Snackbar.LENGTH_SHORT)
@@ -92,7 +96,7 @@ public class LinkCollectorActivity extends AppCompatActivity implements LinkColl
                     .show();
         }
         else{
-            Snackbar.make(linkCollectorLayout, "URL Invalid! URL must start with https:// or http://", Snackbar.LENGTH_LONG)
+            Snackbar.make(linkCollectorLayout, "URL Invalid!", Snackbar.LENGTH_LONG)
                     .setAction("Close", new View.OnClickListener() {
                         @Override
                         public void onClick(View v){
@@ -101,8 +105,12 @@ public class LinkCollectorActivity extends AppCompatActivity implements LinkColl
                     })
                     .show();
         }
+    }
 
-
+    private boolean isValidUrl(String url) {
+        Pattern p = Patterns.WEB_URL;
+        Matcher m = p.matcher(url.toLowerCase());
+        return m.matches();
     }
 
     @Override
