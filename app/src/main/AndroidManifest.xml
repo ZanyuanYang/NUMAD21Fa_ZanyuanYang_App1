@@ -16,7 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ClickyClicky" />
-        <activity android:name=".LinkCollectorActivity" />
+        <activity android:name=".LinkCollectorActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
     </application>
 
 </manifest>
