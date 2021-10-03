@@ -49,9 +49,10 @@ public class LinkCollectorDialog extends AppCompatDialogFragment {
                         String name = editTextName.getText().toString();
                         String url = editTextUrl.getText().toString();
                         listener.applyTexts(name, url);
-
                     }
                 });
+
+
 
         editTextName = view.findViewById(R.id.link_name);
         editTextUrl = view.findViewById(R.id.link_url);

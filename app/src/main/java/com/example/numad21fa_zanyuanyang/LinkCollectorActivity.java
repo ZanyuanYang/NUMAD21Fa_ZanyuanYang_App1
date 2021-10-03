@@ -120,8 +120,10 @@ public class LinkCollectorActivity extends AppCompatActivity implements LinkColl
 
         String url = adapter.getItemUrl(position);
 
-        if (!url.startsWith("https://") || !url.startsWith("http://")) {
-            url = "https://" + url;
+        if (!url.startsWith("https://")) {
+            if(!url.startsWith("http://")){
+                url = "https://" + url;
+            }
         }
 
         Intent i = new Intent(Intent.ACTION_VIEW);
