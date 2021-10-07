@@ -14,3 +14,6 @@
    - Create modal with two inputs: one is `name`, one is `url`
    - Add the input the list
    - Make link clickable and launch it in web browser
+   
+5. A5 Locator
+   - display location (latitude and longitude) from the location sensor
