@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private Button clickyButton;
     private Button linkCollectorBtn;
     private Button locatorBtn;
+    private Button webServiceBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 Intent intent = new Intent(MainActivity.this, LocatorActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        webServiceBtn = findViewById(R.id.webService);
+        webServiceBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, WebServiceActivity.class);
                 startActivity(intent);
             }
         });
