@@ -149,4 +149,14 @@
         app:layout_constraintTop_toTopOf="@+id/submit"
         app:layout_constraintVertical_bias="0.0" />
 
+    <ImageView
+        android:id="@+id/stockImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/changeTitle"
+        tools:srcCompat="@tools:sample/avatars" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -34,7 +36,7 @@ public class WebServiceActivity extends AppCompatActivity {
         priceTV = (TextView) findViewById(R.id.price);
         todayChangeTV = (TextView) findViewById(R.id.todayChange);
         yearToDateTV = (TextView) findViewById(R.id.yearToDate);
-//        stockImg= (ImageView) findViewById(R.id.stockImg);
+        stockImg= (ImageView) findViewById(R.id.stockImg);
         symbolInputET = (EditText) findViewById(R.id.symbolInput);
         clearBtn = (Button) findViewById(R.id.clear);
         clearBtn.setOnClickListener(new View.OnClickListener(){
@@ -95,8 +97,6 @@ public class WebServiceActivity extends AppCompatActivity {
                 Element image = stockImgLink.select("img").first();
                 stockImg1 = image.attr("abs:src");
 
-
-
             }catch(Exception e){
                 e.printStackTrace();
             }
@@ -111,7 +111,7 @@ public class WebServiceActivity extends AppCompatActivity {
             priceTV.setText(price);
             todayChangeTV.setText(todayChange);
             yearToDateTV.setText(yearToDate);
-//            stockImg.setImageBitmap(getBitmapFromURL(url));
+            Glide.with(WebServiceActivity.this).load(stockImg1).into(stockImg);
 
         }
 
