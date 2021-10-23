@@ -24,7 +24,7 @@
         <activity android:name=".ClickyClicky" />
         <activity android:name=".LinkCollectorActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity android:name=".LocatorActivity" />
-        <activity android:name=".WebServiceActivity" />
+        <activity android:name=".WebServiceActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
     </application>
 
 </manifest>
